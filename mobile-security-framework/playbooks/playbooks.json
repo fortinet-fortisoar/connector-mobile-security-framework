@@ -1,0 +1,1061 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "3305beb8-ae39-4963-b82d-23c91c77fc69",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Mobile Security Framework - 1.0.0",
+      "description": "Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis. MobSF support mobile app binaries (APK, XAPK, IPA & APPX) along with zipped source code and provides REST APIs for seamless integration with your CI/CD or DevSecOps pipeline. The Dynamic Analyzer helps you to perform runtime security assessment and interactive instrumented testing.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Mobile",
+        "mobile-security-framework"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "a7378ae4-25bd-4c22-be24-73268f94c0c2",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "This action uploads a file to your MobSF instance. Supported file types are apk, zip, ipa and appx.",
+          "name": "Upload File",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/94ddcbdf-9ebf-45c7-887f-7a23fc837bff",
+          "steps": [
+            {
+              "uuid": "94ddcbdf-9ebf-45c7-887f-7a23fc837bff",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e6a9cfb7-045f-4999-972e-e7369f0e7ba0",
+                "title": "Mobile Security Framework: Upload File",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7485b473-3411-4f4f-8c5f-0a9b2c4a5d6b",
+              "@type": "WorkflowStep",
+              "name": "Upload File",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "upload_file",
+                "operationTitle": "Upload File",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "11856f7f-727b-41e6-9f02-a8545a530b81",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Upload File",
+              "sourceStep": "/api/3/workflow_steps/94ddcbdf-9ebf-45c7-887f-7a23fc837bff",
+              "targetStep": "/api/3/workflow_steps/7485b473-3411-4f4f-8c5f-0a9b2c4a5d6b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "cf27130d-5ad0-4d47-a2d3-eb70b10e3237",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Scan a file which is uploaded on MobSF instance.",
+          "name": "Scan File",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/461e860c-d674-4036-89eb-33092f291d51",
+          "steps": [
+            {
+              "uuid": "461e860c-d674-4036-89eb-33092f291d51",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4eedf859-13f8-40e3-a33d-180d09f7ea1f",
+                "title": "Mobile Security Framework: Scan File",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "f68a976f-9b63-41c7-98d2-dac532a94acd",
+              "@type": "WorkflowStep",
+              "name": "Scan File",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": {
+                  "re_scan": false
+                },
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "scan_file",
+                "operationTitle": "Scan File",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4ee9556c-79b6-499d-9be0-e68714f5222c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Scan File",
+              "sourceStep": "/api/3/workflow_steps/461e860c-d674-4036-89eb-33092f291d51",
+              "targetStep": "/api/3/workflow_steps/f68a976f-9b63-41c7-98d2-dac532a94acd"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f904cf66-09f2-466c-a1be-be085cd0eff7",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Delete scan results saved on MobSF instance.",
+          "name": "Delete Scan",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/783e5048-6d9f-4470-97f7-8f1f2c57f421",
+          "steps": [
+            {
+              "uuid": "783e5048-6d9f-4470-97f7-8f1f2c57f421",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "72b83ebf-3e45-4346-ba0c-864e670e0008",
+                "title": "Mobile Security Framework: Delete Scan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a7ce4c20-997f-463f-b191-c3042b43cf65",
+              "@type": "WorkflowStep",
+              "name": "Delete Scan",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "delete_scan",
+                "operationTitle": "Delete Scan",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "6806ee8c-3f10-486f-9fcd-143d76648922",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Scan",
+              "sourceStep": "/api/3/workflow_steps/783e5048-6d9f-4470-97f7-8f1f2c57f421",
+              "targetStep": "/api/3/workflow_steps/a7ce4c20-997f-463f-b191-c3042b43cf65"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "62271fc1-86ed-4131-8bfb-1f1ca9c6092a",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Display Recent Scan Results",
+          "name": "Display Recent Scans",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5cfb0f11-f2d7-4223-b7f8-b16aa8ea49ec",
+          "steps": [
+            {
+              "uuid": "5cfb0f11-f2d7-4223-b7f8-b16aa8ea49ec",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "51c04b39-e2ea-43e8-b268-83b1a7006575",
+                "title": "Mobile Security Framework: Display Recent Scans",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ea612eb0-2e1c-4b29-b41a-72e637268d7b",
+              "@type": "WorkflowStep",
+              "name": "Display Recent Scans",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "display_recent_scans",
+                "operationTitle": "Display Recent Scans",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "86690ff8-cb9c-40e2-aef1-16650227cccf",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Display Recent Scans",
+              "sourceStep": "/api/3/workflow_steps/5cfb0f11-f2d7-4223-b7f8-b16aa8ea49ec",
+              "targetStep": "/api/3/workflow_steps/ea612eb0-2e1c-4b29-b41a-72e637268d7b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3323f8ca-7f6a-4f3e-872c-11ee656415cb",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Get MobSF Application Security Scorecard\n\n",
+          "name": "App Scorecard",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/aa3a0672-8769-4312-a924-3d3d19fd5893",
+          "steps": [
+            {
+              "uuid": "aa3a0672-8769-4312-a924-3d3d19fd5893",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "3c3a9c1e-8c40-4940-a939-245c1250ffbf",
+                "title": "Mobile Security Framework: App Scorecard",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "5a44a998-1c31-416f-ae2b-5e882ab2dc2d",
+              "@type": "WorkflowStep",
+              "name": "App Scorecard",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "app_scorecard",
+                "operationTitle": "App Scorecard",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "851292d9-693f-4f87-a625-e2925c35ca77",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> App Scorecard",
+              "sourceStep": "/api/3/workflow_steps/aa3a0672-8769-4312-a924-3d3d19fd5893",
+              "targetStep": "/api/3/workflow_steps/5a44a998-1c31-416f-ae2b-5e882ab2dc2d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0052cf7b-2b0b-4e63-be84-1fd1d285ebe7",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Generate PDF Report of Scan Result",
+          "name": "Generate PDF Report",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/6966a789-e301-41a7-9f8c-1198c507984a",
+          "steps": [
+            {
+              "uuid": "6966a789-e301-41a7-9f8c-1198c507984a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c6141d14-f449-49a6-b071-74919c409187",
+                "title": "Mobile Security Framework: Generate PDF Report",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9c4431f3-64ab-4bdc-924c-585cfeb2947a",
+              "@type": "WorkflowStep",
+              "name": "Generate PDF Report",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "generate_pdf_report",
+                "operationTitle": "Generate PDF Report",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "e1f82c49-6033-4ca4-8e4a-31e063e3e86c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Generate PDF Report",
+              "sourceStep": "/api/3/workflow_steps/6966a789-e301-41a7-9f8c-1198c507984a",
+              "targetStep": "/api/3/workflow_steps/9c4431f3-64ab-4bdc-924c-585cfeb2947a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4546e010-e569-47f1-bac8-27f113f0a86c",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Generate JSON Report of the Scan Result",
+          "name": "Generate JSON Report",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b9347e1e-a505-4740-9b35-cea00986f3ac",
+          "steps": [
+            {
+              "uuid": "b9347e1e-a505-4740-9b35-cea00986f3ac",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "75bd3027-7f96-4d85-a4d6-60938b669834",
+                "title": "Mobile Security Framework: Generate JSON Report",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d4fda32b-7ebc-4c7a-b400-e2f927f91200",
+              "@type": "WorkflowStep",
+              "name": "Generate JSON Report",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "generate_json_report",
+                "operationTitle": "Generate JSON Report",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b7be2f1b-f26d-4fd5-90ca-eb77aa961509",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Generate JSON Report",
+              "sourceStep": "/api/3/workflow_steps/b9347e1e-a505-4740-9b35-cea00986f3ac",
+              "targetStep": "/api/3/workflow_steps/d4fda32b-7ebc-4c7a-b400-e2f927f91200"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e78812e7-d495-4d67-bc60-f594851918a8",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "View Resource file of the Scan result",
+          "name": "View Source Files",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e05ae33c-a1af-493a-aeae-ecce41d47328",
+          "steps": [
+            {
+              "uuid": "e05ae33c-a1af-493a-aeae-ecce41d47328",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "cbfc090d-28cd-440a-b125-f13253efc328",
+                "title": "Mobile Security Framework: View Source Files",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "82cd89de-9a3f-4b4c-8572-1d1d7bd9089f",
+              "@type": "WorkflowStep",
+              "name": "View Source Files",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "view_source_files",
+                "operationTitle": "View Source Files",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "6f69a95d-6387-46c0-a5bc-34ff4ffdb0d8",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> View Source Files",
+              "sourceStep": "/api/3/workflow_steps/e05ae33c-a1af-493a-aeae-ecce41d47328",
+              "targetStep": "/api/3/workflow_steps/82cd89de-9a3f-4b4c-8572-1d1d7bd9089f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "30ed67d1-0083-45da-ae9e-4c32e349b2eb",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Compare Scan Result of two different Scans",
+          "name": "Compare Apps",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2b7936d4-b439-4e25-b285-291989a83b05",
+          "steps": [
+            {
+              "uuid": "2b7936d4-b439-4e25-b285-291989a83b05",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b50ff3e8-7ad5-486b-a50e-165dc37bf896",
+                "title": "Mobile Security Framework: Compare Apps",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "b365dee3-cf1b-4597-b15c-f3c2588c85db",
+              "@type": "WorkflowStep",
+              "name": "Compare Apps",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "compare_apps",
+                "operationTitle": "Compare Apps",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d960edde-b75f-426b-a4b3-3efa79d116bd",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Compare Apps",
+              "sourceStep": "/api/3/workflow_steps/2b7936d4-b439-4e25-b285-291989a83b05",
+              "targetStep": "/api/3/workflow_steps/b365dee3-cf1b-4597-b15c-f3c2588c85db"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "04ebe492-2032-4cb7-8a40-bd019487e4aa",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Suppress findings by rule id.",
+          "name": "Suppress by Rule",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3878dba7-82f3-4037-9748-ddb0de4638bc",
+          "steps": [
+            {
+              "uuid": "3878dba7-82f3-4037-9748-ddb0de4638bc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1d2c1169-0197-492a-a9a7-c0bd78082af9",
+                "title": "Mobile Security Framework: Suppress by Rule",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "5cdd9a2d-1a3e-4210-9e0a-6742a7fde4a2",
+              "@type": "WorkflowStep",
+              "name": "Suppress by Rule",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "suppress_by_rule",
+                "operationTitle": "Suppress by Rule",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "90669bf5-1c64-4028-bc05-1febe7c6d49b",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Suppress by Rule",
+              "sourceStep": "/api/3/workflow_steps/3878dba7-82f3-4037-9748-ddb0de4638bc",
+              "targetStep": "/api/3/workflow_steps/5cdd9a2d-1a3e-4210-9e0a-6742a7fde4a2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5071592b-d820-44e3-8bd3-02f29cd81ae7",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Suppress findings by files.\n\n",
+          "name": "Suppress by Files",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/54dc2aba-654b-4325-a55a-edc0ab734075",
+          "steps": [
+            {
+              "uuid": "54dc2aba-654b-4325-a55a-edc0ab734075",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "92e43025-98e4-442e-a50f-bfebd835e3c7",
+                "title": "Mobile Security Framework: Suppress by Files",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "320acd76-6042-4b44-ae8d-570da322eaef",
+              "@type": "WorkflowStep",
+              "name": "Suppress by Files",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "suppress_by_files",
+                "operationTitle": "Suppress by Files",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8d0040bd-506d-48c4-9a6c-8e1712b512ea",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Suppress by Files",
+              "sourceStep": "/api/3/workflow_steps/54dc2aba-654b-4325-a55a-edc0ab734075",
+              "targetStep": "/api/3/workflow_steps/320acd76-6042-4b44-ae8d-570da322eaef"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "cadbd578-ea19-4420-91fa-439bc7fad4ad",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "List suppressions associated with a given Scan result.",
+          "name": "View Suppressions",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1dcb8366-146b-4387-8de8-74a236f48489",
+          "steps": [
+            {
+              "uuid": "1dcb8366-146b-4387-8de8-74a236f48489",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "3263e6d1-cc28-435b-a0ed-3fb05c002fdd",
+                "title": "Mobile Security Framework: View Suppressions",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4a117023-675a-45f2-8767-9835f2ba6ae9",
+              "@type": "WorkflowStep",
+              "name": "View Suppressions",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "view_suppressions",
+                "operationTitle": "View Suppressions",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "26e96904-d284-41b7-8d35-4268a77f2835",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> View Suppressions",
+              "sourceStep": "/api/3/workflow_steps/1dcb8366-146b-4387-8de8-74a236f48489",
+              "targetStep": "/api/3/workflow_steps/4a117023-675a-45f2-8767-9835f2ba6ae9"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "99ac2d0f-be47-4822-b704-dbc60cd2cb94",
+          "collection": "/api/3/workflow_collections/3305beb8-ae39-4963-b82d-23c91c77fc69",
+          "triggerLimit": null,
+          "description": "Delete suppressions with a given Scan result.",
+          "name": "Delete Suppressions",
+          "tag": "#Mobile Security Framework",
+          "recordTags": [
+            "Mobile",
+            "mobile-security-framework"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3ad5f312-7d40-45ef-a5a0-df2a14a47e15",
+          "steps": [
+            {
+              "uuid": "3ad5f312-7d40-45ef-a5a0-df2a14a47e15",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "83e75d72-6098-49c5-a44b-7a2833d23220",
+                "title": "Mobile Security Framework: Delete Suppressions",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "490fff36-6e5e-464d-9960-88dc410a1f3e",
+              "@type": "WorkflowStep",
+              "name": "Delete Suppressions",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Mobile Security Framework",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "mobile-security-framework",
+                "operation": "delete_suppressions",
+                "operationTitle": "Delete Suppressions",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "21831e60-58cb-4106-ad85-b3f981268b47",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Suppressions",
+              "sourceStep": "/api/3/workflow_steps/3ad5f312-7d40-45ef-a5a0-df2a14a47e15",
+              "targetStep": "/api/3/workflow_steps/490fff36-6e5e-464d-9960-88dc410a1f3e"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
