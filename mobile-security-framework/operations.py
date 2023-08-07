@@ -12,7 +12,7 @@ from os.path import join
 from integrations.crudhub import make_request, make_file_upload_request
 from django.conf import settings
 
-logger = get_logger("mobile-security-framework_1_0_0")
+logger = get_logger("mobile-security-framework")
 
 
 def upload_file(config: dict, params: dict) -> dict:

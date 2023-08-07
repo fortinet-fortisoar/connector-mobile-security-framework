@@ -138,13 +138,13 @@
         },
         {
           "name": "re_scan",
-          "title": "Re Scan File",
+          "title": "Rescan File",
           "type": "checkbox",
           "editable": true,
           "visible": true,
           "required": false,
-          "tooltip": "Tick if you want to Re scan the File, Default is False.",
-          "description": "Tick if you want to Re scan the File, Default is False.",
+          "tooltip": "Tick if you want to Rescan the File, Default is False.",
+          "description": "Tick if you want to Rescan the File, Default is False.",
           "value": false
         }
       ],

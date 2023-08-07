@@ -9,7 +9,7 @@ from connectors.core.connector import Connector, get_logger, ConnectorError
 from .operations import operations
 from .check_health import _check_health
 
-logger = get_logger("mobile-security-framework_1_0_0")
+logger = get_logger("mobile-security-framework")
 class CustomConnector(Connector):
     def execute(self, config, operation, params, **kwargs):
         try:
@@ -17,7 +17,7 @@ class CustomConnector(Connector):
                 "connector_version": self._info_json.get('version')}
             operation = operations.get(operation)
             if not operation:
-                logger.error('Unsupported operation: {}'.format(operation))
+                logger.error('Unsupported operation: {0}'.format(operation))
                 raise ConnectorError('Unsupported operation')
             return operation(config, params)
         except Exception as err:
