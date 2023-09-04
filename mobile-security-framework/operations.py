@@ -77,7 +77,7 @@ def display_recent_scans(config: dict, params: dict) -> dict:
         raise ConnectorError(err)
 
 
-def app_scorecard(config: dict, params: dict) -> dict:
+def get_app_scorecard(config: dict, params: dict) -> dict:
     try:
         endpoint = "/api/v1/scorecard"
         method = "POST"
@@ -94,8 +94,9 @@ def generate_pdf_report(config: dict, params: dict) -> dict:
     try:
         endpoint = "/api/v1/download_pdf"
         method = "POST"
-        # filepath = '/tmp/{}'.format(params.get("file_name").split(".")[0])
-        file_name= params.get("file_name")
+        file_name = params.get("file_name")
+        if not file_name.endswith(".pdf"):
+            file_name = file_name + ".pdf"
         path = os.path.join(settings.TMP_FILE_ROOT, file_name)
 
         MK = MakeRestApiCall(config=config)
@@ -104,7 +105,7 @@ def generate_pdf_report(config: dict, params: dict) -> dict:
         with open(path, 'wb') as fp:
             fp.write(response)
 
-        return upload_file_to_cyops(file_path=file_name, filename=file_name,name=file_name, create_attachment=True)
+        return upload_file_to_cyops(file_path=file_name, filename=file_name, name=file_name, create_attachment=True)
     except Exception as err:
         logger.error(f"Error occurred in Generate PDF Report{err}")
         raise ConnectorError(err)
@@ -138,7 +139,7 @@ def view_source_files(config: dict, params: dict) -> dict:
         raise ConnectorError(err)
 
 
-def compare_apps(config: dict, params: dict) -> dict:
+def compare_scan_results(config: dict, params: dict) -> dict:
     try:
         endpoint = "/api/v1/compare"
         method = "POST"
@@ -253,11 +254,11 @@ operations = {
     "scan_file": scan_file,
     "delete_scan": delete_scan,
     "display_recent_scans": display_recent_scans,
-    "app_scorecard": app_scorecard,
+    "get_app_scorecard": get_app_scorecard,
     "generate_pdf_report": generate_pdf_report,
     "generate_json_report": generate_json_report,
     "view_source_files": view_source_files,
-    "compare_apps": compare_apps,
+    "compare_scan_results": compare_scan_results,
     "suppress_by_rule": suppress_by_rule,
     "suppress_by_files": suppress_by_files,
     "view_suppressions": view_suppressions,
