@@ -10,11 +10,9 @@ from .operations import operations
 from .check_health import _check_health
 
 logger = get_logger("mobile-security-framework")
-class CustomConnector(Connector):
+class MobSFConnector(Connector):
     def execute(self, config, operation, params, **kwargs):
         try:
-            config['connector_info'] = {"connector_name": self._info_json.get('name'),
-                "connector_version": self._info_json.get('version')}
             operation = operations.get(operation)
             if not operation:
                 logger.error('Unsupported operation: {0}'.format(operation))
@@ -26,8 +24,6 @@ class CustomConnector(Connector):
 
     def check_health(self, config=None):
         try:
-            config['connector_info'] = {"connector_name": self._info_json.get('name'),
-                "connector_version": self._info_json.get('version')}
             return _check_health(config)
         except Exception as err:
             raise ConnectorError(err)

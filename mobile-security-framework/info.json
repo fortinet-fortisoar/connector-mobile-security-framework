@@ -29,8 +29,8 @@
         "editable": true,
         "visible": true,
         "required": true,
-        "tooltip": "Specify the API Key that you have generated on the MobSF instance.",
-        "description": "Specify the API Key that you have generated on the MobSF instance."
+        "tooltip": "Specify the API Key that you have generated on the MobSF instance setup.",
+        "description": "Specify the API Key that you have generated on the MobSF instance setup."
       },
       {
         "name": "verify_ssl",
@@ -105,8 +105,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the type of file you want to scan.",
-          "description": "Specify the type of file you want to scan.",
+          "tooltip": "Specify the type of file you want to scan via MobSF.",
+          "description": "Specify the type of file you want to scan via MobSF.",
           "options": [
             "xapk",
             "apk",
@@ -123,8 +123,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the name of the app with extension you want to Scan.",
-          "description": "Specify the name of the app with extension you want to Scan."
+          "tooltip": "Specify the name of the app with extension you want to Scan in MobSF.",
+          "description": "Specify the name of the app with extension you want to Scan in MobSF."
         },
         {
           "name": "hash",
@@ -148,7 +148,194 @@
           "value": false
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "md5": "",
+        "sha1": "",
+        "size": "",
+        "urls": [
+          {
+            "path": "",
+            "urls": [
+            ]
+          }
+        ],
+        "apkid": "",
+        "files": [
+        ],
+        "quark": [
+        ],
+        "title": "",
+        "appsec": {
+          "hash": "",
+          "high": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "info": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "secure": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "hotspot": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "warning": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "app_name": "",
+          "trackers": "",
+          "file_name": "",
+          "version_name": "",
+          "security_score": "",
+          "total_trackers": ""
+        },
+        "emails": [
+          {
+            "path": "",
+            "emails": [
+            ]
+          }
+        ],
+        "sha256": "",
+        "domains": "",
+        "dwd_dir": "",
+        "host_os": "",
+        "max_sdk": "",
+        "min_sdk": "",
+        "secrets": [
+        ],
+        "strings": {
+          "strings_so": [
+          ],
+          "strings_code": [
+          ],
+          "strings_apk_res": [
+          ]
+        },
+        "version": "",
+        "app_name": "",
+        "app_type": "",
+        "base_url": "",
+        "services": [
+        ],
+        "trackers": {
+          "trackers": [
+          ],
+          "total_trackers": "",
+          "detected_trackers": ""
+        },
+        "file_name": "",
+        "libraries": [
+        ],
+        "providers": [
+        ],
+        "receivers": [
+        ],
+        "timestamp": "",
+        "activities": [
+        ],
+        "icon_found": "",
+        "target_sdk": "",
+        "android_api": "",
+        "icon_hidden": "",
+        "permissions": "",
+        "virus_total": "",
+        "average_cvss": "",
+        "package_name": "",
+        "version_code": "",
+        "version_name": "",
+        "code_analysis": {
+          "summary": {
+            "high": "",
+            "info": "",
+            "secure": "",
+            "warning": "",
+            "suppressed": ""
+          },
+          "findings": ""
+        },
+        "file_analysis": [
+          {
+            "files": [
+            ],
+            "finding": ""
+          }
+        ],
+        "firebase_urls": [
+        ],
+        "main_activity": "",
+        "niap_analysis": "",
+        "exported_count": {
+          "exported_services": "",
+          "exported_providers": "",
+          "exported_receivers": "",
+          "exported_activities": ""
+        },
+        "binary_analysis": [
+        ],
+        "network_security": {
+          "network_summary": {
+          },
+          "network_findings": [
+          ]
+        },
+        "manifest_analysis": {
+          "manifest_summary": {
+            "high": "",
+            "info": "",
+            "warning": "",
+            "suppressed": ""
+          },
+          "manifest_findings": [
+            {
+              "name": "",
+              "rule": "",
+              "title": "",
+              "severity": "",
+              "component": [
+              ],
+              "description": ""
+            }
+          ]
+        },
+        "playstore_details": {
+          "error": ""
+        },
+        "exported_activities": "",
+        "browsable_activities": "",
+        "certificate_analysis": {
+          "certificate_info": "",
+          "certificate_summary": {
+            "high": "",
+            "info": "",
+            "warning": ""
+          },
+          "certificate_findings": [
+            [
+            ]
+          ]
+        }
+      }
     },
     {
       "operation": "delete_scan",
@@ -167,8 +354,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Hash of the Scan you want to delete.",
-          "description": "Hash of the Scan you want to delete."
+          "tooltip": "Specify the Hash of the Scan you want to delete.",
+          "description": "Specify the Hash of the Scan you want to delete."
         }
       ],
       "output_schema": {
@@ -192,8 +379,8 @@
           "editable": true,
           "visible": true,
           "required": false,
-          "tooltip": "Specify the Page Number you want to fetch.",
-          "description": "Specify the Page Number you want to fetch."
+          "tooltip": "Specify the Page Number you want to fetch from the List of Pages.",
+          "description": "Specify the Page Number you want to fetch from the List of Pages."
         },
         {
           "name": "page_size",
@@ -224,9 +411,9 @@
       }
     },
     {
-      "operation": "app_scorecard",
-      "title": "App Scorecard",
-      "annotation": "app_scorecard",
+      "operation": "get_app_scorecard",
+      "title": "Get App Scorecard",
+      "annotation": "get_app_scorecard",
       "description": "Get MobSF Application Security Scorecard\n\n",
       "category": "investigation",
       "is_config_required": true,
@@ -240,8 +427,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File.",
-          "description": "Specify the Hash of the Scan File."
+          "tooltip": "Specify the Hash of the Scan File for which you want to get App Scorecard.",
+          "description": "Specify the Hash of the Scan File for which you want to get App Scorecard."
         }
       ],
       "output_schema": {
@@ -303,8 +490,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File.",
-          "description": "Specify the Hash of the Scan File."
+          "tooltip": "Specify the Hash of the Scan File for which you want to generate the PDF Report.",
+          "description": "Specify the Hash of the Scan File for which you want to generate the PDF Report."
         },
         {
           "name": "file_name",
@@ -313,14 +500,13 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File.",
-          "description": "Specify the Hash of the Scan File."
+          "tooltip": "Specify the Name of the File with extension.",
+          "description": "Specify the Name of the File with extension."
         }
       ],
       "output_schema": {
         "id": "",
         "@id": "",
-        "cVEs": [],
         "file": {
           "id": "",
           "@id": "",
@@ -343,29 +529,9 @@
         "assets": [],
         "owners": [],
         "people": [],
-        "tenant": {
-          "id": "",
-          "@id": "",
-          "name": "",
-          "role": "",
-          "uuid": "",
-          "@type": "",
-          "region": "",
-          "license": "",
-          "industry": "",
-          "tenantId": "",
-          "createDate": "",
-          "createUser": "",
-          "modifyDate": "",
-          "modifyUser": "",
-          "description": "",
-          "isDedicated": "",
-          "allowRemoteMMDModification": ""
-        },
         "@context": "",
         "assignee": "",
         "comments": [],
-        "conflict": "",
         "warrooms": [],
         "incidents": [],
         "createDate": "",
@@ -401,10 +567,7 @@
         },
         "recordTags": [],
         "userOwners": [],
-        "workspaces": [],
-        "description": "",
-        "tenantRecordId": "",
-        "vulnerabilities": []
+        "description": ""
       }
     },
     {
@@ -424,11 +587,198 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File.",
-          "description": "Specify the Hash of the Scan File."
+          "tooltip": "Specify the Hash of the Scan File for which you want to generate the JSON Report.",
+          "description": "Specify the Hash of the Scan File for which you want to generate the JSON Report."
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "md5": "",
+        "sha1": "",
+        "size": "",
+        "urls": [
+          {
+            "path": "",
+            "urls": [
+            ]
+          }
+        ],
+        "apkid": "",
+        "files": [
+        ],
+        "quark": [
+        ],
+        "title": "",
+        "appsec": {
+          "hash": "",
+          "high": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "info": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "secure": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "hotspot": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "warning": [
+            {
+              "title": "",
+              "section": "",
+              "description": ""
+            }
+          ],
+          "app_name": "",
+          "trackers": "",
+          "file_name": "",
+          "version_name": "",
+          "security_score": "",
+          "total_trackers": ""
+        },
+        "emails": [
+          {
+            "path": "",
+            "emails": [
+            ]
+          }
+        ],
+        "sha256": "",
+        "domains": "",
+        "dwd_dir": "",
+        "host_os": "",
+        "max_sdk": "",
+        "min_sdk": "",
+        "secrets": [
+        ],
+        "strings": {
+          "strings_so": [
+          ],
+          "strings_code": [
+          ],
+          "strings_apk_res": [
+          ]
+        },
+        "version": "",
+        "app_name": "",
+        "app_type": "",
+        "base_url": "",
+        "services": [
+        ],
+        "trackers": {
+          "trackers": [
+          ],
+          "total_trackers": "",
+          "detected_trackers": ""
+        },
+        "file_name": "",
+        "libraries": [
+        ],
+        "providers": [
+        ],
+        "receivers": [
+        ],
+        "timestamp": "",
+        "activities": [
+        ],
+        "icon_found": "",
+        "target_sdk": "",
+        "android_api": "",
+        "icon_hidden": "",
+        "permissions": "",
+        "virus_total": "",
+        "average_cvss": "",
+        "package_name": "",
+        "version_code": "",
+        "version_name": "",
+        "code_analysis": {
+          "summary": {
+            "high": "",
+            "info": "",
+            "secure": "",
+            "warning": "",
+            "suppressed": ""
+          },
+          "findings": ""
+        },
+        "file_analysis": [
+          {
+            "files": [
+            ],
+            "finding": ""
+          }
+        ],
+        "firebase_urls": [
+        ],
+        "main_activity": "",
+        "niap_analysis": "",
+        "exported_count": {
+          "exported_services": "",
+          "exported_providers": "",
+          "exported_receivers": "",
+          "exported_activities": ""
+        },
+        "binary_analysis": [
+        ],
+        "network_security": {
+          "network_summary": {
+          },
+          "network_findings": [
+          ]
+        },
+        "manifest_analysis": {
+          "manifest_summary": {
+            "high": "",
+            "info": "",
+            "warning": "",
+            "suppressed": ""
+          },
+          "manifest_findings": [
+            {
+              "name": "",
+              "rule": "",
+              "title": "",
+              "severity": "",
+              "component": [
+              ],
+              "description": ""
+            }
+          ]
+        },
+        "playstore_details": {
+          "error": ""
+        },
+        "exported_activities": "",
+        "browsable_activities": "",
+        "certificate_analysis": {
+          "certificate_info": "",
+          "certificate_summary": {
+            "high": "",
+            "info": "",
+            "warning": ""
+          },
+          "certificate_findings": [
+            [
+            ]
+          ]
+        }
+      }
     },
     {
       "operation": "view_source_files",
@@ -478,12 +828,19 @@
           ]
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": "",
+        "file": "",
+        "type": "",
+        "title": "",
+        "sqlite": "",
+        "version": ""
+      }
     },
     {
-      "operation": "compare_apps",
-      "title": "Compare Apps",
-      "annotation": "compare_apps",
+      "operation": "compare_scan_results",
+      "title": "Compare Scan Results",
+      "annotation": "compare_scan_results",
       "description": "Compare Scan Result of two different Scans",
       "category": "investigation",
       "is_config_required": true,
@@ -497,8 +854,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the First Scan File.",
-          "description": "Specify the Hash of the First Scan File."
+          "tooltip": "Specify the Hash code of the First Scan File.",
+          "description": "Specify the Hash code of the First Scan File."
         },
         {
           "name": "hash2",
@@ -507,17 +864,180 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Second Scan File.",
-          "description": "Specify the Hash of the Second Scan File."
+          "tooltip": "Specify the Hash code of the Second Scan File.",
+          "description": "Specify the Hash code of the Second Scan File."
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "urls": {
+          "common": [
+          ],
+          "only_first": [
+          ],
+          "only_second": [
+          ]
+        },
+        "apkid": {
+          "common": {
+            "packer": [
+            ],
+            "anti_vm": [
+            ],
+            "dropper": [
+            ],
+            "abnormal": [
+            ],
+            "compiler": [
+            ],
+            "anti_debug": [
+            ],
+            "obfuscator": [
+            ],
+            "manipulator": [
+            ],
+            "anti_disassembly": [
+            ]
+          },
+          "only_first": {
+            "packer": [
+            ],
+            "anti_vm": [
+            ],
+            "dropper": [
+            ],
+            "abnormal": [
+            ],
+            "compiler": [
+            ],
+            "anti_debug": [
+            ],
+            "obfuscator": [
+            ],
+            "manipulator": [
+            ],
+            "anti_disassembly": [
+            ]
+          },
+          "only_second": {
+            "packer": [
+            ],
+            "anti_vm": [
+            ],
+            "dropper": [
+            ],
+            "abnormal": [
+            ],
+            "compiler": [
+            ],
+            "anti_debug": [
+            ],
+            "obfuscator": [
+            ],
+            "manipulator": [
+            ],
+            "anti_disassembly": [
+            ]
+          }
+        },
+        "title": "",
+        "version": "",
+        "first_app": {
+          "md5": "",
+          "size": "",
+          "apkid": {
+            "classes.dex": {
+              "anti_vm": [
+              ],
+              "compiler": [
+              ]
+            }
+          },
+          "name_ver": "",
+          "services": [
+          ],
+          "file_name": "",
+          "providers": [
+          ],
+          "receivers": [
+          ],
+          "activities": [
+          ],
+          "icon_found": "",
+          "icon_hidden": "",
+          "cert_subject": "",
+          "exported_count": {
+            "exported_services": "",
+            "exported_providers": "",
+            "exported_receivers": "",
+            "exported_activities": ""
+          }
+        },
+        "second_app": {
+          "md5": "",
+          "size": "",
+          "apkid": "",
+          "name_ver": "",
+          "services": [
+          ],
+          "file_name": "",
+          "providers": [
+          ],
+          "receivers": [
+          ],
+          "activities": [
+          ],
+          "icon_found": "",
+          "icon_hidden": "",
+          "cert_subject": "",
+          "exported_count": {
+            "exported_services": "",
+            "exported_providers": "",
+            "exported_receivers": "",
+            "exported_activities": ""
+          }
+        },
+        "android_api": {
+          "common": [
+            [
+            ]
+          ],
+          "only_first": [
+            [
+            ]
+          ],
+          "only_second": [
+          ]
+        },
+        "apkid_error": "",
+        "permissions": {
+          "common": [
+          ],
+          "only_first": [
+            [
+            ]
+          ],
+          "only_second": [
+            [
+            ]
+          ]
+        },
+        "browsable_activities": {
+          "common": [
+          ],
+          "only_first": [
+          ],
+          "only_second": [
+          ]
+        },
+        "common_browsable_activities": {
+        }
+      }
     },
     {
       "operation": "suppress_by_rule",
       "title": "Suppress by Rule",
       "annotation": "suppress_by_rule",
-      "description": "Suppress findings by rule id.",
+      "description": "Suppress findings in a Scan by rule id.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -530,8 +1050,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan.",
-          "description": "Specify the Hash of the Scan."
+          "tooltip": "Specify the Hash of the Scan in which you want to Suppress Results.",
+          "description": "Specify the Hash of the Scan in which you want to Suppress Results."
         },
         {
           "name": "type",
@@ -554,8 +1074,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Rule ID of the Scan.",
-          "description": "Specify the Rule ID of the Scan."
+          "tooltip": "Specify the Rule ID of the Scan you want to suppress. You can get the Rule ID in the Scan Results in manifest_analysis or code_analysis",
+          "description": "Specify the Rule ID of the Scan you want to suppress. You can get the Rule ID in the Scan Results in manifest_analysis or code_analysis"
         }
       ],
       "output_schema": {
@@ -569,8 +1089,8 @@
       "description": "Suppress findings by files.\n\n",
       "category": "investigation",
       "is_config_required": true,
-      "visible": true,
-      "enabled": true,
+      "visible": false,
+      "enabled": false,
       "parameters": [
         {
           "name": "hash",
@@ -607,7 +1127,6 @@
         }
       ],
       "output_schema": {
-
       }
     },
     {
@@ -677,8 +1196,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Rule ID of the Scan.",
-          "description": "Specify the Rule ID of the Scan."
+          "tooltip": "Specify the Suppression Rule ID of the Scan which is to be deleted.",
+          "description": "Specify the Suppression Rule ID of the Scan which is to be deleted."
         },
         {
           "name": "kind",
