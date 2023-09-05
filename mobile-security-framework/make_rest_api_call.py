@@ -35,7 +35,6 @@ class MakeRestApiCall:
             except Exception as err:
                 logger.error(f"Error in curl utils: {str(err)}")
 
-
             if response.ok:
                 if 'json' in str(response.headers):
                     return response.json()
