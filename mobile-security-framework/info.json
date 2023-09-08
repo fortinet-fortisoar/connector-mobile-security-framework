@@ -2,14 +2,14 @@
   "name": "mobile-security-framework",
   "label": "Mobile Security Framework",
   "version": "1.0.0",
-  "description": "Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis. MobSF support mobile app binaries (APK, XAPK, IPA & APPX) along with zipped source code and provides REST APIs for seamless integration with your CI/CD or DevSecOps pipeline. The Dynamic Analyzer helps you to perform runtime security assessment and interactive instrumented testing.",
+  "description": "Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis. MobSF support mobile app binaries (APK, XAPK, IPA & APPX) along with zipped source code and provides REST APIs for seamless integration with your CI/CD or DevSecOps pipeline.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
   "category": "Threat Hunting and Search",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/mobile-security-framework/675/mobile-security-framework-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -25,7 +25,7 @@
       {
         "name": "api_key",
         "title": "API Key",
-        "type": "text",
+        "type": "password",
         "editable": true,
         "visible": true,
         "required": true,
@@ -49,7 +49,7 @@
       "operation": "upload_file",
       "title": "Upload File",
       "annotation": "upload_file",
-      "description": "Uploads a file to your MobSF instance for further Scanning, allowing you to analyze various types of mobile application packages, including apk, zip, ipa, and appx, in order to assess their security and potential vulnerabilities.",
+      "description": "Uploads a file to your MobSF instance for further Scanning, allowing you to analyze various types of mobile application packages, including apk, zip, ipa, and appx, to assess their security and potential vulnerabilities.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -76,8 +76,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify a reference ID to access the attachment metadata from FortiSOAR\u2122's Attachments module. If you have selected Attachment ID, this defaults to the {{vars.attachment_id}} value. If you have selected File IRI, then this defaults to the {{vars.file_iri}} value.",
-          "description": "Specify a reference ID to access the attachment metadata from FortiSOAR\u2122's Attachments module. If you have selected Attachment ID, this defaults to the {{vars.attachment_id}} value. If you have selected File IRI, then this defaults to the {{vars.file_iri}} value."
+          "tooltip": "Specify a reference ID to access the attachment metadata from FortiSOAR™'s Attachments module.",
+          "description": "Specify a reference ID to access the attachment metadata from FortiSOAR™'s Attachments module."
         }
       ],
       "output_schema": {
@@ -92,7 +92,7 @@
       "operation": "scan_file",
       "title": "Scan File",
       "annotation": "scan_file",
-      "description": "Scan a file that has been securely uploaded to your MobSF instance for a comprehensive analysis of its security vulnerabilities and potential risks.",
+      "description": "Scans a file that has been securely uploaded to your MobSF instance for a comprehensive analysis of its security vulnerabilities and potential risks.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -143,8 +143,8 @@
           "editable": true,
           "visible": true,
           "required": false,
-          "tooltip": "Tick if you want to Rescan the File, Default is False.",
-          "description": "Tick if you want to Rescan the File, Default is False.",
+          "tooltip": "Select if you want to re-scan the File. It is unselected by default i.e. set to false.",
+          "description": "Select if you want to re-scan the File. It is unselected by default i.e. set to false.",
           "value": false
         }
       ],
@@ -341,7 +341,7 @@
       "operation": "delete_scan",
       "title": "Delete Scan Result",
       "annotation": "delete_scan",
-      "description": "Delete the stored scan results from the MobSF instance.",
+      "description": "Deletes the stored scan results from the MobSF instance.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -354,8 +354,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan you want to delete.",
-          "description": "Specify the Hash of the Scan you want to delete."
+          "tooltip": "Specify the hash value of the scan to delete.",
+          "description": "Specify the hash value of the scan to delete."
         }
       ],
       "output_schema": {
@@ -366,7 +366,7 @@
       "operation": "display_recent_scans",
       "title": "List Recent Scans",
       "annotation": "display_recent_scans",
-      "description": "Display the most recent scan results within your MobSF instance for easy access and analysis.",
+      "description": "Displays the most recent scan results within your MobSF instance for easy access and analysis.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -414,7 +414,7 @@
       "operation": "get_app_scorecard",
       "title": "Get App Scorecard",
       "annotation": "get_app_scorecard",
-      "description": "Get MobSF application's security scorecard result for a given Scan.",
+      "description": "Gets MobSF application's security scorecard result for a given scan.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -427,8 +427,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File for which you want to get App Scorecard.",
-          "description": "Specify the Hash of the Scan File for which you want to get App Scorecard."
+          "tooltip": "Specify the hash value of the scan file for which you want to get the app scorecard.",
+          "description": "Specify the hash value of the scan file for which you want to get the app scorecard."
         }
       ],
       "output_schema": {
@@ -477,7 +477,7 @@
       "operation": "generate_pdf_report",
       "title": "Generate PDF Report",
       "annotation": "generate_pdf_report",
-      "description": "Generates PDF Report summarizing the results of your MobSF scan and Saves it in your FortiSOAR Attachment Module.",
+      "description": "Generates PDF Report summarizing the results of your MobSF scan and saves it in your FortiSOAR™'s Attachment module.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -490,8 +490,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File for which you want to generate the PDF Report.",
-          "description": "Specify the Hash of the Scan File for which you want to generate the PDF Report."
+          "tooltip": "Specify the hash value of the scan file for which you want to generate the PDF report.",
+          "description": "Specify the hash value of the scan file for which you want to generate the PDF report."
         },
         {
           "name": "file_name",
@@ -500,8 +500,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Name of the File with extension.",
-          "description": "Specify the Name of the File with extension."
+          "tooltip": "Specify the name of the file.",
+          "description": "Specify the name of the file."
         }
       ],
       "output_schema": {
@@ -574,7 +574,7 @@
       "operation": "generate_json_report",
       "title": "Generate JSON Report",
       "annotation": "generate_json_report",
-      "description": "Generates JSON Report summarizing the results of your MobSF scan",
+      "description": "Generates JSON Report summarizing the results of your MobSF scan.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -587,8 +587,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File for which you want to generate the JSON Report.",
-          "description": "Specify the Hash of the Scan File for which you want to generate the JSON Report."
+          "tooltip": "Specify the hash value of the scan file for which you want to generate the JSON Report.",
+          "description": "Specify the hash value of the scan file for which you want to generate the JSON Report."
         }
       ],
       "output_schema": {
@@ -784,7 +784,7 @@
       "operation": "view_source_files",
       "title": "View Source Files",
       "annotation": "view_source_files",
-      "description": "Retrieves the Source Files and Folders of the Scan result according to the Parameters provided.",
+      "description": "Retrieves the source files and folders of the scan result.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -797,8 +797,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the relative path of the Source File which you want to See. By default, Path directory is in /home/mobsf/.MobSF/{hash_key}/java_source",
-          "description": "Specify the relative path of the Source File which you want to See. By default, Path directory is in /home/mobsf/.MobSF/{hash_key}/java_source"
+          "tooltip": "Specify the relative path of the source file which you want to see. By default, Path directory is in /home/mobsf/.MobSF/{hash_key}/java_source",
+          "description": "Specify the relative path of the source file which you want to see. By default, Path directory is in /home/mobsf/.MobSF/{hash_key}/java_source"
         },
         {
           "name": "hash",
@@ -807,8 +807,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan File",
-          "description": "Specify the Hash of the Scan File"
+          "tooltip": "Specify the Hash value of the Scan File",
+          "description": "Specify the Hash value of the Scan File"
         },
         {
           "name": "type",
@@ -854,8 +854,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash code of the First Scan File.",
-          "description": "Specify the Hash code of the First Scan File."
+          "tooltip": "Specify the hash value of the first scan file with which to compare.",
+          "description": "Specify the hash value of the first scan file with which to compare."
         },
         {
           "name": "hash2",
@@ -864,8 +864,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash code of the Second Scan File.",
-          "description": "Specify the Hash code of the Second Scan File."
+          "tooltip": "Specify the hash value of the second scan file to be compared.",
+          "description": "Specify the hash value of the second scan file to be compared."
         }
       ],
       "output_schema": {
@@ -1050,8 +1050,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan in which you want to Suppress Results.",
-          "description": "Specify the Hash of the Scan in which you want to Suppress Results."
+          "tooltip": "Specify the hash value of the scan in which you want to suppress results.",
+          "description": "Specify the hash value of the scan in which you want to suppress results."
         },
         {
           "name": "type",
@@ -1074,8 +1074,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Rule ID of the Scan you want to suppress. You can get the Rule ID in the Scan Results in manifest_analysis or code_analysis",
-          "description": "Specify the Rule ID of the Scan you want to suppress. You can get the Rule ID in the Scan Results in manifest_analysis or code_analysis"
+          "tooltip": "Specify the rule ID of the scan you want to suppress. You can get the rule ID in the scan results in manifest_analysis or code_analysis.",
+          "description": "Specify the rule ID of the scan you want to suppress. You can get the rule ID in the scan results in manifest_analysis or code_analysis."
         }
       ],
       "output_schema": {
@@ -1146,8 +1146,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan.",
-          "description": "Specify the Hash of the Scan."
+          "tooltip": "Specify the Hash value of the Scan.",
+          "description": "Specify the Hash value of the Scan."
         }
       ],
       "output_schema": {
@@ -1159,7 +1159,7 @@
       "operation": "delete_suppressions",
       "title": "Delete Suppressions",
       "annotation": "delete_suppressions",
-      "description": "Delete suppressions by suppression rule ID within a given scan result.",
+      "description": "Deletes suppressions by suppression rule ID within a given scan result.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -1172,8 +1172,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the Hash of the Scan.",
-          "description": "Specify the Hash of the Scan."
+          "tooltip": "Specify the Hash value of the Scan.",
+          "description": "Specify the Hash value of the Scan."
         },
         {
           "name": "type",
